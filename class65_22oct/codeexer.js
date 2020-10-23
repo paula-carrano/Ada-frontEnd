@@ -19,3 +19,12 @@ const burlarse = (str) => {
 
 //4) Ejercicio 4
 
+const aHackerSpeak=(str) => {
+    let rules =  [{from: "i", to: "1"}, {from: "e", to: "3"}, {from: "a", to: "4"}, {from: "s", to: "5"}, {from: "o", to: "0"}];
+
+    for(let i = 0; rules.length > i; i++){
+        str = str.replace((rules[i].from),(rules[i].to))
+    }
+    return str;
+}
+
