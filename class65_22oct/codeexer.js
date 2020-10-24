@@ -11,9 +11,8 @@ const restarPorcentaje = (num, por) =>{
 
 //3) Ejercicio 3 
 const burlarse = (str) => {
-    let reemplazo= str.replace((/a|e|o|u/gi), function(i){
-        return "i";
-    })
+    let reemplazo= str.replace((/a|e|o|u/gi), "i");
+
     return reemplazo;
 }
 
