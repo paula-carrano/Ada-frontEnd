@@ -285,7 +285,7 @@ const ganadoras = [
 ];
 
 for (ganadora of ganadoras) {
-    console.log(`${ganadora.nombre} ganó la temporada ${ganadora.temporada}`)
+    //console.log(`${ganadora.nombre} ganó la temporada ${ganadora.temporada}`)
 }
   ///// RESULTADO
   // Bebe Zahara Benet ganó la temporada 1
@@ -295,4 +295,112 @@ for (ganadora of ganadoras) {
   // Jinkx Monsoon ganó la temporada 5
   // Bianca Del Rio ganó la temporada 6
 
+// 12 -  Tenemos un array de objetos, que representa un listado de bandas
+// Cada objeto representa una banda, y tiene las propidades id, nombre, fundacion, activa
+// Mostrar en consola cada banda del array, con la siguiente lógica:
+// Si la banda está activa mostrar el mensaje: "[NOMBRE DE LA BANDA] está activa desde el año [AÑO DE FUNDACIÓN]"
+// Si la banda NO está activa mostrar el mensaje: "[NOMBRE DE LA BANDA] no está activa"
+
+var bandas = [
+    { id: 1, nombre: "Nirvana", fundacion: 1987, activa: false },
+    { id: 2, nombre: "Foo Fighters", fundacion: 1994, activa: true },
+    { id: 3, nombre: "Led Zeppelin", fundacion: 1967, activa: false },
+    { id: 3, nombre: "Queens of the Stone Age", fundacion: 1997, activa: true },
+    { id: 3, nombre: "Pearl Jam", fundacion: 1990, activa: true },
+  ];
+
+  for (banda of bandas) {
+      if(banda.activa == true){
+        //console.log(`${banda.nombre} está activa desde el año ${banda.fundacion}`)
+      }else{
+      //console.log(`${banda.nombre} no está activa`)
+    }
+}
   
+  ///// RESULTADO
+  // Nirvana no está activa
+  // Foo Fighters está activa desde el año 1994
+  // Led Zeppelin no está activa
+  // Queens of the Stone Age está activa desde el año 1997
+  // Pearl Jam está activa desde el año 1990
+  
+// 13 - Tenemos un objeto en la variable banda, con datos de una banda (nombre, año de lanzamiento, si sigue en actividad, una foto, los integrantes y una lista de sus discos).
+// Queremos mostrar:
+// La duración total del disco (suma de la duración de cada canción)
+// La duración promedio por canción (un promedio entre todas las duraciones)
+
+const banda1 = {
+    name: "Led Zeppelin",
+    year: 1968,
+    active: false,
+    thumbnail:
+      "http://townsquare.media/site/295/files/2014/10/Led-Zeppelin1.jpg?w=980&q=75",
+    members: ["Jimmy Page", "Robert Plant", "John Paul Jones", "John Bonham"],
+    albums: [
+      {
+        name: "Led Zeppelin",
+        year: 1969,
+        songs: ["Good Times, Bad Times", "Communication Breakdown"],
+        duration: 2691,
+      },
+      {
+        name: "Led Zeppelin II",
+        year: 1969,
+        songs: ["Whole Lotta Love", "Moby Dick", "Ramble On"],
+        duration: 2502,
+      },
+      {
+        name: "Led Zeppelin III",
+        year: 1970,
+        songs: ["Immigrant Song"],
+        duration: 2489,
+      },
+      {
+        name: "Led Zeppelin IV",
+        year: 1971,
+        songs: ["Rock and Roll", "Stairway to Heaven", "Four Sticks"],
+        duration: 2559,
+      },
+    ],
+  };
+  
+  // completa el codigo para lograr el resultado esperado
+  
+let anioLanzamiento = banda1.year;
+let cantidadMiembros = (banda1.members).length;
+let miembros = banda1.members;
+let cantidadDiscos = (banda1.albums).length;
+
+let canciones = (banda1.albums);
+
+let cantidadTotalCanciones = 0;
+      for (cancion of canciones){
+          let quantity = (cancion.songs).length;
+          cantidadTotalCanciones += quantity;
+      }
+ 
+let promedioDuracion = 0;
+    for (duracion of canciones){
+        let promedio = duracion.duration;
+        promedioDuracion += (promedio)/ cantidadTotalCanciones;
+        }
+
+
+
+  ///// RESULTADO
+  console.log("Led Zeppelin se fundó en el año " + anioLanzamiento);
+  console.log("Tiene " + cantidadMiembros + " miembros: " + miembros);
+  console.log("Tiene en total " + cantidadDiscos + " discos");
+  console.log(
+    "Tiene en total " +
+      cantidadTotalCanciones +
+      " canciones entre todos los discos."
+  );
+  console.log("En promedio, cada canción dura " + promedioDuracion + " segundos");
+
+  // ESPERADO
+  // Led Zeppelin se fundó en el año 1968
+  // Tiene 4 miembros: Jimmy Page, Robert Plant, John Paul Jones, John Bonham
+  // Tiene en total 4 discos
+  // Tiene en total 9 canciones entre todos los discos.
+  // En promedio, cada canción dura 1137.888888888889 segundos
