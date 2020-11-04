@@ -193,7 +193,7 @@ ingresado por el usuario*/
 
 const saludar = () => {
     let nameUser = prompt("Ingrese su nombre");
-    let checkname = prompt(`Su nombre es ${nameUser}? yes/no`);
+    let checkname = prompt(`Su nombre es ${nameUser}? - Ingrese: yes/no`);
     let greeting = "bienvenido a tu sesión!!"
 
     if (checkname === "yes"){
