@@ -381,8 +381,8 @@ let cantidadTotalCanciones = 0;
  
 let promedioDuracion = 0;
     for (duracion of canciones){
-        let promedio = duracion.duration;
-        promedioDuracion += (promedio)/ cantidadTotalCanciones;
+        let total = duracion.duration;
+        promedioDuracion += (total)/ cantidadTotalCanciones;
         }
 
 
