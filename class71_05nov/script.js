@@ -10,8 +10,6 @@ const masBajos = () => {
         if (valorMin > altura) {
             valorMin = altura
         }
-
-
     }
     //console.log(valorMin)
 }
@@ -57,7 +55,7 @@ const showProperty = (prop, valor) => {
 console.table(showProperty('weight', 39.065952))
 console.table(showProperty('professions', "Metalworker"))*/
 
-// 18 Crear una funcion que devuelva al mas alto, al mas bajo, al mas anciano, al mas joven o al mas ancho de "Brastlewark".
+// 18 - Crear una funcion que devuelva al mas alto, al mas bajo, al mas anciano, al mas joven o al mas ancho de "Brastlewark".
 
 const habitante = (caracteristica) => {
     let resultado = {};
@@ -118,17 +116,18 @@ const getMin = (prop) => {
 // 19 - Mostrar una tabla con "Fizwood Mysttink" y todos sus amigos.
 
 const showFriends = () => {
-    let fizwood = inhabitants.filter(inhabitant => inhabitant.name === "Fizwood Mysttink");    
-    let friends = fizwood[0].friends;
-    let tabla = "";
+    let fizwood = inhabitants.filter(inhabitant => inhabitant.name === "Fizwood Mysttink")[0];  //trae el objeto y no el array porque le ponemos indice [0]  
 
-    for(i=0; i< friends.length; i++){
-        tabla += `<li> ${friends[i]} </li>`
+    let nombreFriends = fizwood.friends;
+    let friends = [];
+    
+    
+    for(i=0; i< nombreFriends.length; i++){
+        friends[i] =  inhabitants.filter(inhabitant => inhabitant.name === nombreFriends[i])[0]            
     }
 
-    
-    document.getElementById("fizwoodFriends").innerHTML = `<h5> Lista de los amigos de ${fizwood[0].name}:</h5> ${tabla}`;
-
+    friends.unshift(fizwood);
+    console.table(friends)
 }
 showFriends();
 
