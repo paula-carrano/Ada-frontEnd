@@ -3,15 +3,22 @@ const inhabitants = getInhabitants();
 // 14 Mostrar en pantalla al/los personajes mas enanos de "Brastlewark"
 
 const masBajos = () => {
-    let valorMin = inhabitants[0].height
+    let valorMin = inhabitants[0].height;
+    let inhabitante =  inhabitants[0]
+    let inhabitant = {}
 
     for (i = 0; i < inhabitants.length; i++) {
         let altura = inhabitants[i].height
         if (valorMin > altura) {
             valorMin = altura
+            inhabitante = inhabitante;
         }
     }
-    //console.log(valorMin)
+    
+    inhabitant.masbajo = valorMin;
+    inhabitant.personaje = inhabitante;
+
+    return inhabitant
 }
 //masBajos();
 

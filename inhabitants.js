@@ -2,7 +2,7 @@ const getInhabitants = () => {
   return [
     {
       id: 0,
-      name: "Tobus Quickwhistle",
+      name: "TobusTobus Quickwhistle",
       thumbnail:
         "http://www.publicdomainpictures.net/pictures/10000/nahled/thinking-monkey-11282237747K8xB.jpg",
       age: 306,
