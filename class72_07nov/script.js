@@ -10,8 +10,7 @@ const showdata = (str) => {
 const showdata2 = (str) => {
 
     for (inhabitant of inhabitants) {
-        let nombre = inhabitant.name;
-        if (nombre.includes(str)) {
+        if (inhabitant.name.includes(str)) {
             //console.log(inhabitant);
         }
     }
@@ -48,9 +47,7 @@ const showVolumen = () => {
     let inhabitant = {}
 
     for (inhabitant of inhabitants) {
-        let altura = inhabitant.height;
-        let ancho = inhabitant.weight;
-        let volumen = altura * ancho;
+        let volumen = inhabitant.height * inhabitant.weight;
         if (volumenMin < volumen) {
             volumenMin = volumen
             inhabitante = inhabitante
@@ -61,7 +58,6 @@ const showVolumen = () => {
     inhabitant.inhabitante = inhabitante;
 
     return inhabitant;
-
 }
 
 console.table(showVolumen());
