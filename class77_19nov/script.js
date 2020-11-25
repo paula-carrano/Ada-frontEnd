@@ -1,7 +1,7 @@
 // Hacer un programa que al iniciarse pregunte mediante un prompt por un temperatura, y con ese dato modifique un h1 en el html, de forma tal que diga, por ejemplo, Temperatura actual: 20°. Cambiar el color del h1 dependiendo de la temperatura ingresada, siguiendo las siguientes reglas:
 
 const obtenerTemperatura = () => {
-    const temp = parseInt(prompt("Ingrese la temperatura"));
+    const temp = parseInt(prompt("Ingrese la temperatura actual"));
     const texto = document.createTextNode(temp)
     const h1 = document.createElement('h1')
 
@@ -184,7 +184,7 @@ const getCard = () => {
     leerMas.style.marginBottom = "3px";
     card.appendChild(leerMas);
 }
-//getCard();
+getCard();
 
 // En un documento html agregar al menos tres imágenes de distintos animales, una por cada animal. 
 //Hacer un programa que al iniciarse pregunte mediante un prompt por un animal (indicando en el mensaje las opciones disponibles) 
