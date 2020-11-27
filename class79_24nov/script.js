@@ -66,7 +66,7 @@ const filter = (array, callback) => {
     let arrayNew = [];
 
     for (data of array) {
-        if (callback(data) == true) {
+        if (callback(data)) {
             arrayNew.push(data)
         }
     }
@@ -101,14 +101,3 @@ const every = (array, callback) => {
 
 //every(numeros2, multiploDe10) // false
 //every(numeros2, esPositivo) // true
-
-// 6)- Crear una función some que acepte un array y un callback y que:
-// - por cada elemento del array ejecute el callback pasándole dicho elemento como argumento
-// - devuelva true si al menos una de las llamadas al callback devolvió true
-
-const some = (array, callback) => {
-
-}
-
-some(numeros2, multiploDe10) // true
-//some(numeros2, esPositivo) // true
