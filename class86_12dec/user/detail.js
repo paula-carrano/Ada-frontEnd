@@ -27,7 +27,6 @@ const registrarUsuario = (e) => {
         .catch(error => console.log(error))
 }
 
-//d-inline-block
 
 
 
@@ -39,9 +38,11 @@ const getUser = () => {
 
         })
         .then(data => {
-            document.getElementById('email').value = data.email;
             document.getElementById('user').value = data.user;
+            document.getElementById('email').value = data.email;            
             document.getElementById('password').value = data.password;
+
+            
         })
         .catch(error => console.log(error))
 }
@@ -57,7 +58,6 @@ const updateUser = (e) => {
         },
         body: JSON.stringify(crearObjeto())
     })
-        .then()
 }
 
 if (idAModificar) {
