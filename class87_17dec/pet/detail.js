@@ -54,7 +54,7 @@ getPet()
 const updatePet = (e) => {
     e.preventDefault()
     console.log('aca')
-    fetch(urlBase + '/pet/' + idAModificar + '.json', {
+    fetch(`${urlBase}/pet/${idAModificar}.json`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'Application/json'

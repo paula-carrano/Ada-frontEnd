@@ -27,12 +27,9 @@ const registrarUsuario = (e) => {
         .catch(error => console.log(error))
 }
 
-
-
-
 //https://ada-api-clase86-default-rtdb.firebaseio.com/users/-MOcL9pwz_sevaaAE3gS.json
 const getUser = () => {
-    fetch(urlBase + '/users/' + idAModificar + '.json')
+    fetch(`${urlBase}/users/${idAModificar}.json`)
         .then(response => {
             return response.json()
 
@@ -51,7 +48,7 @@ getUser()
 
 const updateUser = (e) => {
     e.preventDefault()
-    fetch(urlBase + '/users/' + idAModificar + '.json', {
+    fetch(`${urlBase}/users/${idAModificar}.json`, {
         method: 'PATCH', //delete
         headers: {
             'Content-Type': 'Application/json'

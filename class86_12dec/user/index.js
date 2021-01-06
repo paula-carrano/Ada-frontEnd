@@ -1,7 +1,7 @@
 const tableUsers = document.getElementById('users-list');
 
 const crearTabla = () => {
-    fetch(urlBase + '/users.json')
+    fetch(`${urlBase}/users.json`)
         .then(response => response.json())
         .then(data => {
             const tbody = tableUsers.querySelector('tbody');

@@ -1,9 +1,9 @@
 const tablePets = document.getElementById('pet-list');
 const buttonDelete = document.getElementById('delete');
-const creatTable = () => {
 
+const creatTable = () => {
     //Traemos los datos 
-    fetch(urlBase + '/pet.json')
+    fetch(`${urlBase}/pet.json`)
         .then(response => response.json())
         .then(data => {
 
@@ -20,7 +20,7 @@ const creatTable = () => {
                 const a = document.createElement('a');
 
                 // Le asigno un link al nombre de usuario
-                a.setAttribute('href', 'detail.html?name=' + prop);
+                a.setAttribute('href', `detail.html?name=${prop}`);
 
                 a.innerHTML = pet.name;
                 tdBreed.innerHTML = pet.breed;
@@ -42,6 +42,7 @@ const creatTable = () => {
                 buttonDelete.setAttribute('id', 'delete');
                 buttonDelete.style.backgroundColor = 'red';
                 buttonDelete.innerHTML = '<i class="fa fa-trash " aria-hidden="true"> </i> Delete';
+                buttonDelete.addEventListener('click', ()=> deletePet());
                 const td = document.createElement('td');
                 td.appendChild(buttonDelete);
                 tr.appendChild(td);
@@ -65,16 +66,12 @@ const creatTable = () => {
 creatTable()
 
 
-const deletePet = (e) => {
-    e.preventDefault()
-    fetch(urlBase + '/pet/' + idAModificar + '.json', {
+const deletePet = (id) => {
+    fetch(`${urlBase}/pet/${id}.json`, {
         method: 'DELETE',
     })
-        .then(response => {
-            return response.json()
-        })
-        .then(data => console.log(data))
-        .catch(error => console.log(error))
+        .then(response =>response.json())
+        creatTable()
 }
 
-buttonDelete.addEventListener('click', deletePet)
+creatTable();
