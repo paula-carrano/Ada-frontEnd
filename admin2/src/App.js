@@ -1,10 +1,11 @@
 import "./App.css";
-
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { Dashboard, Products, Users } from "./Screens";
 
 const App = () => {
+
+
   return (
     <Router>
       <Switch>
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="/" component={Dashboard} />
       </Switch>
     </Router>
+
   );
 };
 

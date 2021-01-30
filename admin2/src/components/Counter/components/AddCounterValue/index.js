@@ -14,8 +14,9 @@ const AddCounterValue = () => {
 
     return (
         <form>
+            <h4>Counter</h4>
             <button onClick={sumar} type="button">+</button>
-            <input type="number" value={value} />
+            <input className="mx-2" type="number" value={value < 0 ? 0 : value} />
             <button onClick={restar} type="button">-</button>
         </form>
     )

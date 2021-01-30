@@ -1,9 +1,11 @@
-import React from 'react'
 import Layout from '../../Layout'
 import Main from '../../Main'
-import { LikeButton, Counter } from '../../components'
+import React, { useState } from 'react';
+import { LikeButton, Counter, Conversor, Modal } from '../../components'
 
 const Dashboard = () => {
+    //MODAL USE STATE 
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
         <Layout>
@@ -11,7 +13,15 @@ const Dashboard = () => {
                 <h1>Dashboard</h1>
 
                 <LikeButton />
-                <Counter />
+                <div className="mt-2">
+                    <Counter />
+                </div>
+                <div className="mt-2">
+                    <button type="button" className="btn btn-primary mb-2" data-bs-toggle="modal" onClick={() => setIsModalOpen(true)}>
+                        Soy un modal</button>
+                    <Modal show={isModalOpen} setShow={setIsModalOpen} />
+                </div>
+                <Conversor />
             </Main>
         </Layout>
     )
