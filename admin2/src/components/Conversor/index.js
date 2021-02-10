@@ -2,37 +2,27 @@ import React, { useState } from 'react';
 
 export const Conversor = () => {
 
-    const [celsius, setCelsius] = useState('')
-    const [fahrenheit, setFahrenheit] = useState('');
+    const [temp, updateTemp] = useState({ f: 0, c: 0 })
 
-    const changeDegreesCelsius = (e) => {
-        if (e.target.name === "celsius") {
-            setCelsius((e.target.value))
-            console.log(celsius)
-        }
-    }
+    const updateC = ev => updateTemp({
+        c: ev.target.value,
+        f: (+ev.target.value * 9 / 5 + 32).toFixed(2)
+    })
 
-    const changeDegreesFahrenheit = (e) => {
-        if (e.target.name === "fahrenheit") {
-            setFahrenheit((e.target.value))
-            setCelsius((5 / 9) * (fahrenheit - 32))
-            console.log(e.target.value)
-        }
-    }
+    const updateF = ev => updateTemp({
+        c: ((+ev.target.value - 32) * 5 / 9).toFixed(2),
+        f: ev.target.value
+    })
 
-    const changeDegree = (e) => {
-        e.preventDefault()
-        setFahrenheit((1.8 * celsius) + 32)
-    }
 
     return (
         <div>
             <form>
                 <div className="form-group">
                     <h4>Conversor</h4>
-                    <input type="number" placeholder="Celsius" name="celsius" value={celsius} onChange={changeDegreesCelsius} />
-                    <button className="btn-primary mx-2" onClick={changeDegree}> Convertir </button>
-                    <input type="number" placeholder="Fahrenheit " name="fahrenheit" value={fahrenheit} />
+                    <input type="number" placeholder="Celsius" name="celsius" value={temp.c} onChange={updateC} />
+                    <p>=</p>
+                    <input type="number" placeholder="Fahrenheit " name="fahrenheit" value={temp.f} onChange={updateF} />
                 </div>
             </form>
         </div>

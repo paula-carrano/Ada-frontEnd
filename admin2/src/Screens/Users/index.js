@@ -12,12 +12,12 @@ const Users = () => {
 
         const { id, name, age, image, height } = newUser
 
-        setInhabitants([...inhabitants, { 
-            id: id, 
-            name: name, 
-            age: age, 
-            image: image, 
-            height: height 
+        setInhabitants([...inhabitants, {
+            id: id,
+            name: name,
+            age: age,
+            image: image,
+            height: height
         }])
     }
 
@@ -41,7 +41,7 @@ const Users = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {inhabitants.map(({id, name, thumbnail, age, height }) => {
+                        {inhabitants.map(({ id, name, thumbnail, age, height }) => {
                             return (
                                 <tr>
                                     <td>{id}</td>
@@ -52,7 +52,7 @@ const Users = () => {
                                 </tr>
                             )
                         })}
-                        
+
                     </tbody>
                 </table>
             </Main>

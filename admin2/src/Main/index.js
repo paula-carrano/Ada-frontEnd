@@ -11,7 +11,7 @@ const Main = ({ children, showSettings }) => {
 
       <main className="main bg-light">
 
-        {showSettings && 
+        {!showSettings &&
           <div className="settings">
             <button className="btn">+</button>
             <button className="btn">-</button>
@@ -26,7 +26,7 @@ const Main = ({ children, showSettings }) => {
 };
 
 Main.defaultProps = {
-  showSettings : false
+  showSettings: false
 }
 
 export default Main;
